@@ -41,3 +41,8 @@ jobs:
     - name: Test
       working-directory: ${{runner.workspace}}/build/bin/${{matrix.build_type}}
       run: ./mcut_tests
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        path: ${{runner.workspace}}/build
